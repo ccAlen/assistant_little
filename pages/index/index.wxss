@@ -1,0 +1,43 @@
+/* pages/test/test.wxss */
+.module_titlecenter{
+  padding: 15rpx 0;
+  position:relative;
+  font-size:36rpx;
+  font-weight:bold;
+  color:#000;
+  text-align: center;
+}
+.banner{
+  display: block;
+  width: 750rpx;
+  height: 632rpx;
+}
+.module{
+  padding: 0 5%;
+}
+/**index.wxss**/
+page{
+  background: #fff;
+}
+.testAgain {
+  display:inline-block;
+  padding:25rpx;
+  box-sizing:border-box;
+  text-align:center;
+  color:#fff !important;
+  font-size:30rpx;
+  background:#ffc000 !important;
+  border-radius:15rpx;
+  width:50%;
+  line-height: 40rpx !important;
+}
+.kzbtnbox{
+  text-align: center;
+  padding: 40rpx 0;
+}
+.kztxt{
+  font-size:29rpx;
+  color:#000;
+  line-height:46rpx;
+  text-align: center;
+}

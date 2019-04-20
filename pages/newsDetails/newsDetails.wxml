@@ -1,0 +1,37 @@
+<!--pages/newsDetails/newsDetails.wxml--> 
+<!-- <import src="/towxml/entry.wxml"/> -->
+<!-- <import src="../../html2wxml-template/html2wxml.wxml" /> -->
+<wxs module="filter" src="../../utils/secondToDate.wxs"></wxs> 
+<view class='newsHeader'>
+  <view class='nhT1'>{{newsDetails.title}}</view>
+  <view class='nhT2'>
+    <text class=''>{{newsDetails.origin}}</text>
+    <text class='nhdata'>{{newsDetails.created_at}}</text>
+  </view>
+</view>
+<view class='htmltowxml_content'>
+  <!-- <htmltowxml text="{{text}}" bindWxmlTagATap="wxmlTagATap" wx:if="{{content != ''}}" /> -->
+  
+  <!-- <template is="html2wxml" data="{{wxmlData:article}}" /> -->
+  <htmltowxml json="{{content}}" bindWxmlTagATap="wxmlTagATap" ></htmltowxml>
+  <!-- <view wx:else>没有内容</view> -->
+</view>
+<view class='botbox' wx:if="{{newsDetails}}">
+  <view class='zanbox'>
+    <view class='share' bindtap='zanFun'></view> 
+    <view class='zancount'>分享</view>
+    <button class='sharebtn' open-type="share" plain="true"></button>
+  </view>
+  <view class='zanbox'>
+    <view class='zan {{iszan ? " zaned" : ""}}' bindtap='zanFun'></view> 
+    <view class='zancount'>收藏</view>
+  </view>
+</view>
+<login id="dialog" wx:if="{{showLogin}}" bind:getKey="getKey"></login>
+<phone id="phone" wx:if="{{showGetPhone}}" bind:getPhone="getPhone"></phone>
+<view class='gzhshouquan' wx:if="{{isshowzgh}}">
+  <view class='rebox'>
+    <official-account class='accountsy'></official-account>
+    <view class='gzhclose' bindtap='closegzhFun'></view>
+  </view>
+</view>

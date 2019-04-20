@@ -1,0 +1,58 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wx564dae257086a71d",
+	"projectname": "assistant",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "扫小程序码进入小程序",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1047"
+				},
+				{
+					"id": 1,
+					"name": "顶部搜索框搜索结果页“使用过的小程序”列表",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1089"
+				}
+			]
+		}
+	}
+}

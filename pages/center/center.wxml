@@ -1,0 +1,39 @@
+<!--pages/center/center.wxml-->
+<view class='circlebg'></view>
+<view class='centerbox'>
+  <view class='headerbox'>
+    <view>
+      <image src='../img/login.png' mode='aspectFill' class='headericon' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}" ></image>
+      <image src='{{userInfo.avatar || userInfo.userInfo.avatarUrl}}' mode='aspectFill' class='headericon' wx:else></image>
+    </view>
+    <view class='userName' wx:if="{{userInfo.name || userInfo.userInfo.nickName}}">{{userInfo.name || userInfo.userInfo.nickName}}</view>
+    <view class='userName' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}">点击登录</view>
+    <button plain="true" data-btntype='center' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='loginbtn' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}"></button>
+  </view>
+</view>
+<view class='centercontent'>
+  <view bindtap='LinkFun' data-linkurl='record' class='centerlist i1'>
+    报告记录
+    <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='loginbtn' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}"></button>
+  </view>
+  <view bindtap='LinkFun' data-linkurl='collection' class='centerlist i2'>
+    我的收藏
+    <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='loginbtn' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}"></button>
+  </view>
+  <view bindtap='LinkFun' data-linkurl='feedbackSuggestion' class='centerlist i3'>
+    反馈建议
+    <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='loginbtn' wx:if="{{!userInfo.name && !userInfo.userInfo.nickName}}"></button>
+  </view>
+  <view bindtap='LinkFun' data-linkurl='getBag' class='centerlist yellowfont i4'>添加客服送各资格证考试资源包</view>
+</view>
+<view class='ewmcontent' wx:if="{{showewm}}">
+  <view class='closebox' bindtap='closeEWMfun'></view>
+  <view class='ewmMain'>
+    <view class='emT'>长按保存二维码</view>
+    <view class='emT'>在微信扫描添加客服</view>
+    <image src='{{imgalist[0]}}' bindtap="previewImage" mode='aspectFill' class='emimg'></image>
+    <view class='emT'>可免费获得四六级、教师资格证等热门考证资料礼包</view>
+  </view>
+</view>
+<!-- <login id="dialog" wx:if="{{showLogin}}" bind:getKey="getKey"></login> -->
+<phone id="phone" wx:if="{{showGetPhone}}" bind:getPhone="getPhone"></phone>

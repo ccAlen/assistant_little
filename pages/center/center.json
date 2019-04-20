@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "login": "../common/login/login",
+    "phone": "../common/phone/phone"
+  }
+}

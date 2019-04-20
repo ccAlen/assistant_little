@@ -1,0 +1,30 @@
+<!--pages/record/record.wxml-->
+<!-- <wxs module="filter" src="../../utils/secondToDate.wxs"></wxs> -->
+<view>
+  <!--学习记录模块  -->
+  <view class='helper'>
+    <view class='magb padlf bgwhite'>
+      <view wx:if="{{kaozhengList.length > 0}}">
+        <navigator url="{{'../notes/notes?zhuanyeid=' + item.major_id + '&zhiyeid=' + item.prof_id}}" class='record_time record_zs' wx:for="{{kaozhengList}}" wx:key="{{index}}">
+          <view class='listindex'>{{index + 1}}</view>
+          <view class='rzsT1'>{{item.created_at}}建议结果</view>
+          <view class='rzsT2'>我的专业：{{item.major.major_name}}</view>
+          <view class='rzsT2'>就业方向：{{item.profession.prof_name}}</view>
+        </navigator>
+      </view>
+      <view class='nonthingbox' wx:else>暂时没有测试结果喔~</view>
+      <!-- <view class='record_time record_zs'>
+        <view class='listindex'>2</view>
+        <view class='rzsT1'>2018年4月25日建议结果</view>
+        <view class='rzsT2'>我的专业：环境管理工程</view>
+        <view class='rzsT2'>就业方向：互联网产品经理</view>
+      </view>
+      <view class='record_time record_zs'>
+        <view class='listindex'>2</view>
+        <view class='rzsT1'>2018年4月25日建议结果</view>
+        <view class='rzsT2'>我的专业：环境管理工程</view>
+        <view class='rzsT2'>就业方向：互联网产品经理</view>
+      </view> -->
+    </view>
+  </view>
+</view>

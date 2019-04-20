@@ -1,0 +1,66 @@
+<!--pages/inputDirection/inputDirection.wxml-->
+<view class='majorcontent'>
+  <view class='searchcontent'>
+    <view class='inputbox'>
+      <view class='searchicon'></view>
+      <input class='majorinput' placeholder='请输入岗位关键字' bindinput="getInputValFun" value='{{postName}}' data-val='{{postName}}'></input>
+      <view class='nextstap' bindtap='nextstapFun'>生成报告</view>
+    </view>
+    <view class='searchresult'>
+      <view wx:if="{{searchMajorList.length > 0 && showlist}}">
+        <view class='srTop'>点击选择目标就业方向</view>
+        <view class='{{(postName == item.prof_name) ? "srList srListed" : "srList"}}' wx:for="{{searchMajorList}}" wx:key="{{item.id}}" bindtap='onclickListFun' data-list='{{item.prof_name}}' data-type='b' data-id="{{item.id}}">{{item.prof_name}}</view>
+      </view>
+      <!--专业搜索失败  -->
+      <view wx:if="{{searchMajorList.length <= 0 && postName != '' && searchTextLength >=4}}">
+        <view class='wrongbox'>
+          <image src='../img/monkey.png' mode='aspectFill' class='wrong'></image>
+        </view>
+        <view class='wrongTxt'>对不起，你的岗位暂时没有被收录，请稍后再试。</view>
+        <view class='wrongTxt padB50'>或给我们
+          <navigator class='suggestLink' url="../feedbackSuggestion/feedbackSuggestion">提建议</navigator> ，以便补录。</view>
+      </view>
+    </view>
+  </view>
+  <view class='adtbox'>
+    <view class='adT1'>你也可以点击选择以下岗位名</view>
+    <view class='adT1'>然后查看大数据报告</view>
+  </view>
+  <view class='profbox'>
+    <view class='profchild {{zhiyeid == item.id ? "profchilded" : ""}}' bindtap='selectprof' data-prof='{{item.prof_name}}' data-id='{{item.id}}' wx:for="{{profList}}" wx:key="{{index}}">{{item.prof_name}}</view>
+  </view>
+  <view class='refreshbox'>
+    <view class='refreshchild' bindtap='changeFresh'>换一批</view>
+  </view>
+</view>
+<view class='getphoneBoom' wx:if="{{showGetPhone}}">
+  <view class='shadowbox'>
+    <view class='mainbox'>
+      <view class='buytipstxt'>请授权手机号</view>
+      <view class='btnbox'>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='btn_child sure'>我知道了</button>
+      </view>
+    </view>
+  </view>
+</view> 
+<!-- 分享到群 -->
+<view class='loginBoom' wx:if="{{showshare}}">
+  <!-- <view class='shadowbox'>
+    <view class='mainbox'>
+      <view class='txt1'><view class='wecat'>分享到群</view></view>
+      <view class='sharebtnbox'>
+        <view class='cancalbtn' bindtap='closeShare'>取消</view>
+        <button open-type="share" plain="true" class='btn_child sure'>分享</button>
+      </view>
+    </view>
+  </view> -->
+  
+  <view class='boomcenter'>
+    <view class='shadowbox' bindtap='closeShare'></view>
+    <view class='sharebox'>
+      <image src='../img/img2.png' mode='aspectFill' class='shareimg'></image>
+      <button open-type="share" plain="true" class='sharebtn'></button>
+      <view class='cancal' bindtap='closeShare'></view>
+    </view>
+  </view>
+</view>

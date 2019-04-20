@@ -1,0 +1,22 @@
+<!--pages/test/test.wxml-->
+<view class='contain'>
+  <image src='../img/banner1.jpg' mode='aspectFill' class='banner'></image>
+  <view class='module'>
+    <view class='module_titlecenter'>考证指南</view>
+    <view class='kztxt'>本专业最应该考什么证？</view>
+    <view class='kztxt'>如何报考？有靠谱攻略吗？</view>
+    <view class='kztxt'>从业者一般都拥有哪些证书？</view>
+    <view class='kztxt'>证书对升职加薪的影响有多大？</view>
+    <view class='kzbtnbox'>
+      <view class='testAgain' bindtap='textFun' wx:if="{{!showLogin}}">马上查看</view>
+      <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='testAgain' wx:else>马上查看</button>
+    </view>
+  </view>
+</view>
+<!-- <login id="dialog" wx:if="{{showLogin}}" bind:getKey="getKey"></login> -->
+<view class='gzhshouquan' wx:if="{{isshowzgh}}">
+  <view class='rebox' wx:if="{{isshowzgh}}">
+    <official-account class='accountsy' bindload="officialLoad" binderror="officialError" wx:if="{{isshowzgh}}"></official-account>
+    <view class='gzhclose' bindtap='closegzhFun' wx:if="{{isshowzgh}}"></view>
+  </view>
+</view>

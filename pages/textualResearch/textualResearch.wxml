@@ -1,0 +1,42 @@
+<!--pages/textualResearch/textualResearch.wxml--> 
+<view class='trnav'>
+  <view class='searchbox'>
+    <input class='searchinp' placeholder='请输入关键字' bindinput="searchinputFun"></input>
+    <view class='searchicon s1'></view>
+  </view>
+  <view class='emptyboxtr' hidden='{{!backTopValue}}'></view>
+  <view class='rcnavbox {{backTopValue ? "fixedposition" : ""}}'>
+    <view class='recordNav'>
+      <view class="{{nav == 0 ? 'nav_child nav_selected' : 'nav_child'}}" bindtap='navFun' data-nav='0'>全部</view>
+      <view class="{{nav == item.id ? 'nav_child nav_selected' : 'nav_child'}}" bindtap='navFun' data-nav='{{item.id}}' wx:for="{{navList}}" wx:key="{{index}}">{{item.name}}</view>
+      <view class="{{nav == 9 ? 'nav_child nav_selected' : 'nav_child'}}" bindtap='navFun' data-nav='9'>热门资格证</view>
+    </view>
+    <!-- <view class='searchicon' bindtap='searchFun'></view> -->
+  </view>
+  
+</view>
+<view class='module' style='margin-bottom:0; padding:0 5%;' wx:if="{{hotNewsList.length > 0}}">
+  <navigator url='{{item.type == "news" ? ("../newsDetails/newsDetails?id=" + item.id) : ("../certificateDetails/certificateDetails?certsId=" + item.id)}}' data-id='{{item.id}}' class='hot_module' wx:for="{{hotNewsList}}" wx:key="{{item.id}}" wx:if="{{item.type}}">
+    <view class='hot_right'>
+      <image class='hotimg' src='{{item.thumb_img ? item.thumb_img : item.cover_img}}' mode='aspectFill'></image>
+    </view>
+    <view class='hot_left'>
+      <view class='hlT1'>{{item.title || item.cert_name}}</view>
+      <view class='hlT2'>{{item.description}}</view>
+    </view>
+    
+  </navigator>
+  <navigator url='{{item.title ? ("../newsDetails/newsDetails?id=" + item.id) : ("../certificateDetails/certificateDetails?certsId=" + item.id)}}' data-id='{{item.id}}' class='hot_module' wx:for="{{hotNewsList}}" wx:key="{{item.id}}" wx:if="{{!item.type}}">
+    <view class='hot_right'>
+      <image class='hotimg' src='{{item.thumb_img ? item.thumb_img : item.cover_img}}' mode='aspectFill'></image>
+    </view>
+    <view class='hot_left'>
+      <view class='hlT1'>{{item.title || item.cert_name}}</view>
+      <view class='hlT2'>{{item.description}}</view>
+    </view>
+    
+  </navigator>
+</view>
+<view class='nothing' wx:else bindtap='searchbackFun'>没有您搜索的内容哟~</view>
+<!-- <login id="dialog" wx:if="{{showLogin}}" bind:getKey="getKey"></login>
+<phone id="phone" wx:if="{{showGetPhone}}" bind:getPhone="getPhone"></phone> -->

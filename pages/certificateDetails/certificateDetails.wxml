@@ -1,0 +1,54 @@
+<!--pages/certificateDetails/certificateDetails.wxml-->
+<!-- <import src="../../html2wxml-template/html2wxml.wxml" /> -->
+<view class='certificatebox'>
+  <view class='cdteile'>{{title}}</view>
+  <view class='htmltowxml_content'>
+    <htmltowxml json="{{text}}" bindWxmlTagATap="wxmlTagATap" />
+    <!-- <template is="html2wxml" data="{{wxmlData:article}}" /> -->
+  </view>
+  <!--<view class='gzhbox' wx:if="{{navselect == 0}}">
+    <image src='{{imgalist[0]}}' class='ewmimg' bindtap="previewImage"></image>
+    <view class='gzhtxt'>截图后识别二维码</view>
+    <view class='gzhtxt'>入群与辅导老师交流</view>
+  </view>-->
+  <view class='gzhbox wxh'>
+    <image src='../img/img.png' mode='aspectFill' class='zghimg'></image>
+    <view class='magtop'>请添加客服微信：<text class='unline'>{{wechatNumber}}</text></view>
+    <view class='copy' bindtap='copyText' data-text="{{wechatNumber}}">点击复制客服微信号</view>
+  </view>
+</view>
+<!-- 目录弹框 -->
+<view class='cNavbox' wx:if="{{showNav}}">
+  <view class='shadowbox' bindtap='closeNavFun'>
+    <view class='shadowtext'>
+      <view>轻触这里</view>
+      <view>关闭目录</view>
+    </view>
+  </view>
+  <view class='cnavbox'>
+    <view class='navt'><text class='yellowh'></text>目录</view>
+    <view bindtap='navselectFun' data-index='{{index}}' class='cnavList {{navselect == index ? "cnavListed" : ""}}' wx:for="{{detailsList}}" wx:key="{{index}}" data-title='{{item.title}}'><text class='navicon {{"icon" + index}}'></text>{{item.title}}</view>
+  </view>
+</view>
+<view class='suspensionNav'>
+  <view class='navChild i1 {{showNav ? "navsed" : ""}}' bindtap='certificateNavFun'></view>
+  <view class='navChild i2'><button class='sharebtn' open-type="share" plain="true"></button></view>
+  <view class='navChild i3 {{isFavorite ? "favortied" : ""}}' bindtap='collectionFun'></view>
+</view>
+<!-- <view class='bottomNav'>
+  <view class='bottomNav_child {{showNav ? "navsed" : ""}}' bindtap='certificateNavFun'>
+    <view class='icon c1'></view>
+    <view class='navtxt'>目录</view>
+  </view>
+  <view class='bottomNav_child'>
+    <view class='icon c2'></view>
+    <view class='navtxt'>分享</view>
+    <button class='sharebtn' open-type="share" plain="true"></button>
+  </view>
+  <view class='bottomNav_child {{isFavorite ? "favortied" : ""}}'>
+    <view class='icon c3'></view>
+    <view class='navtxt'>收藏</view>
+    <view class='collection' bindtap='collectionFun'></view>
+  </view>
+</view> -->
+<view class='emptybox12'></view>

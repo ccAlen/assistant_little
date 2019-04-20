@@ -1,0 +1,59 @@
+/* pages/record/record.wxss */
+.recordNav{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 32rpx 0;
+  display: box;
+  display: -webkit-box;
+}
+.nav_child{
+  box-flex:1;
+  -webkit-box-flex: 1;
+  font-size: 26rpx;
+  color: #666;
+  padding: 0 40rpx 0 0;
+  text-align: center;
+}
+.nav_selected{
+  font-size: 36rpx;
+  color: #000;
+  font-weight: bold;
+}
+.nonthingbox{
+  font-size: 30rpx;
+  color: #666;
+  padding: 20rpx 0;
+}
+.record_zs{
+  display: block;
+  padding:20rpx 0rpx 20rpx 90rpx;
+  box-sizing:border-box;
+  border-bottom:1px solid #e5e5e5;
+  background-position:95% 50%;
+  position: relative;
+}
+.record_zs:last-child{
+  border-bottom: 0;
+}
+.listindex{
+  font-size: 32rpx;
+  color: #ffc000;
+  width: 56rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 3rpx solid #ffc000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -28rpx;
+}
+.rzsT1{
+  font-size: 22rpx;
+  color: #999;
+  padding-bottom: 10rpx;
+}
+.rzsT2{
+  font-size: 30rpx;
+  color: #000;
+}

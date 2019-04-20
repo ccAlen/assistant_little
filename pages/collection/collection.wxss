@@ -1,0 +1,30 @@
+/* pages/collection/collection.wxss */
+@import "../record/record.wxss";
+
+.courseList {
+  padding: 25rpx 70rpx 25rpx 75rpx;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  display: block;
+}
+
+.courseList:last-child {
+  border-bottom: 0;
+}
+
+.clT2 {
+  font-size: 24rpx;
+  color: #999;
+  padding-top: 5rpx;
+}
+
+.clT1 {
+  font-size: 30rpx;
+}
+.navigator-hover {
+background-color:#fff;
+}
+.cursebox{
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+}

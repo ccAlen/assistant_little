@@ -1,0 +1,35 @@
+<!--pages/inputMajor/inputMajor.wxml-->
+<view class='majorcontent'>
+  <view class='searchcontent'>
+    <view class='inputbox'>
+      <view class='searchicon'></view>
+      <input class='majorinput' placeholder='请输入专业名称关键字' bindinput="getInputValFun" value='{{specialtyList}}' data-val='{{specialtyList}}'></input>
+      <view class='nextstap' bindtap='nextstapFun'>下一步</view>
+    </view>
+    <view class='searchresult'>
+      <view wx:if="{{searchMajorList.length > 0 && showlist}}">
+        <view class='srTop'>点击选择专业</view>
+        <!-- <view class='srList srListed'>管理工程</view> -->
+        <view class='{{(specialtyList == item.major_name) && zhuanye ? "srList srListed" : "srList"}}' wx:for="{{searchMajorList}}" wx:key="{{item.id}}" bindtap='onclickListFun' data-list='{{item.major_name}}' data-type='a' data-id="{{item.id}}">{{item.major_name}}</view>
+      </view>
+      <!--专业搜索失败  -->
+      <view wx:if="{{searchMajorList.length <= 0 && specialtyListlength >=4}}">
+        <view class='wrongbox'>
+          <image src='../img/monkey.png' mode='aspectFill' class='wrong'></image>
+        </view>
+        <view class='wrongTxt'>对不起，你的专业暂时没有被收录，请稍后再试。</view>
+        <view class='wrongTxt padB50'>或给我们<navigator class='suggestLink' url="../feedbackSuggestion/feedbackSuggestion">提建议</navigator> ，以便补录。</view>
+      </view>
+    </view>
+  </view>
+  <view class='imcenter'>
+    <image src='../img/img1.png' class='img1' mode='aspectFill'></image>
+  </view>
+  <!-- <view class='imcenter'>
+    <image src='../img/f_icon27.png' class='imicon' mode='aspectFill'></image>
+    <view class='imT1'>仅需 2 步即可免费获得</view>
+    <view class='imT1'>考证相关大数据报告</view>
+  </view>
+  <view class='imT3'>报告内容主要包括：</view>
+  <view class='imT2'>相关专业及岗位更适合考取何种证书，相关证书的社会需求、薪酬水平、就业情况、如何报考、考证攻略等。</view> -->
+</view>

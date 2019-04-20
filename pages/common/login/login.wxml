@@ -1,0 +1,20 @@
+<!--pages/common/login/login.wxml父--> 
+<!-- <view class='loginBoom'>
+  <view class='shadowbox'>
+    <view class='mainbox'>
+      <view class='closebtnpost' bindtap='closeFun'></view>
+      <view class='txt1'><view class='wecat'>微信登录</view></view>
+      <view class=''>
+        <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='btn_child sure'>确定</button>
+      </view>
+    </view>
+  </view>
+</view> -->
+<view class='loginBoom'>
+  <view class='shadowbox'>
+    <view class='mainbox1'>
+      <image src='../../img/boomimg.jpg' mode='aspectFill' class='boomimg'></image>
+      <button plain="true" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='getbtn'></button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/* pages/suggestedResults/feedbackSuggestion.wxss */
+.suggestion{
+  padding: 20rpx 5%;
+  box-sizing: border-box;
+}
+.areabox{
+  border: 1px solid #a0a0a0;
+  height: 200rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+.inp{
+  font-size: 30rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #a0a0a0;
+  margin-top: 40rpx;
+  display: block;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.sub{
+  background: #ffc000;
+  font-size: 36rpx;
+  text-align: center;
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 15rpx;
+  margin-top: 60rpx;
+  color: #fff;
+  border: 0;
+}

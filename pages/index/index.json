@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "猩考证",
+  "usingComponents": {
+    "login": "../common/login/login"
+  }
+}

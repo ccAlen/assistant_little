@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "资格证着陆页",
+  "usingComponents": {
+    "htmltowxml": "../components/html2wxml/html2wxml"
+  }
+}

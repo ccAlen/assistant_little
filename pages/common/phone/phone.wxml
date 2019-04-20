@@ -1,0 +1,11 @@
+<!--pages/common/phone/phone.wxml-->
+<view class='getphoneBoom'>
+  <view class='shadowbox'>
+    <view class='mainbox'>
+      <view class='buytipstxt'>请授权手机号</view>
+      <view class='btnbox'>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class='btn_child sure'>我知道了</button>
+      </view>
+    </view>
+  </view>
+</view>

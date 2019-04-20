@@ -1,0 +1,110 @@
+/* pages/textualResearch/textualResearch.wxss */ 
+.nothing{
+  font-size: 34rpx;
+  color: #666;
+  padding: 50rpx 5%;
+  box-sizing: border-box;
+  height: 948rpx;
+}
+.recordNav {
+padding:28rpx 8%;
+display:box;
+display:-webkit-box;
+box-sizing: border-box;
+}
+.nav_child {
+  box-flex:1;
+-webkit-box-flex:1;
+font-size:30rpx;
+color:#666;
+padding:0 40rpx 0 0;
+text-align:center;
+}
+.nav_child {
+  flex:1;
+}
+.nav_selected {
+color:#ffc000;
+font-size: 36rpx;
+font-weight: bold;
+}
+.rcnavbox{
+  position: relative;
+  text-align: center;
+  /* padding-bottom: 15rpx; */
+  border-bottom: 1px solid #e5e5e5;
+
+}
+.searchicon{
+  display: inline-block;
+  width: 20%;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAMAAADyQNAxAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowODdjNWQyNC03MzQ5LTQwZmItOGUyOS04M2NmYmQxMzhmOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzRCM0Y0ODVEMTBDMTFFOEFBOUE4MUQ5MzMwQkU5M0IiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzRCM0Y0ODREMTBDMTFFOEFBOUE4MUQ5MzMwQkU5M0IiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MDQwZGYwZi1jYzFlLTQwOTctOGIwYi02YWY0N2Q1YjU5YTkiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpjNjhmZGQ0MS0wZjhhLTY1NGEtOWQ3MS1mOTlhM2E2ZmJlYWQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz71IneQAAAA21BMVEW1tbW2trb+/v76+vq7u7vCwsL8/Pzq6ure3t7Pz8/4+Pjw8PC/v7/u7u719fX29vbAwMC3t7fh4eG6urq4uLjv7+/R0dHHx8e5ubnNzc3y8vLc3Nzl5eW9vb3KysrW1tbU1NTZ2dna2trFxcX9/f37+/u+vr7MzMzGxsbr6+vi4uLT09PS0tLY2Njs7OzBwcHm5ubb29u8vLzn5+fJycno6OjQ0NDp6enx8fHj4+PExMTf39/Ozs709PTX19fLy8v39/fV1dXz8/Pt7e3d3d3IyMjk5OTDw8P////h0K5zAAAASXRSTlP///////////////////////////////////////////////////////////////////////////////////////////////8ADAifVQAAAbpJREFUeNqElOdigjAUhQ+giBP3bt271e69Z97/iXoSQURJvb/g5kvuvhCBNL8m+RLq46t+VoQF/ofZfkAgGceOorJxhOXocp86N9RJ9fF6dlvs5hVXtcOUeSO1tZnpa9NPSmGFqCRVsbOQv1n53sDeolpUxN2dsEbH1CYDKk2f4pbYFXNCrL2hBjTnin2xV8DFyKOueeVMREmTRs49qgZMRbQsaEXFDZdPJTSUy8duFVVkMk0NJb6BhaKYq6oOEg6jVxTrV9RSWaAgDaEEzLRUik6/SYoOprWUTepDUgWgoqVGpHKSiukTwVSQSklqCjhaKgHUVYwnQENL9by6oA2UbR3FNJ0qyqL7c3261qFBNmpmGE2xEVdeT6R5oR8JXfLk3u9CPmZ8RkA5luXX9KkUU1a6268O56NQCaYjwSrVd1PbHCPIpJo09hiM9+0BGbbK1HXDsz2Xox3rPfvGnIyc2s7uBlherJdI46V3mlyvjLIKz+oOGnebbWItjPA2meSUWnpnJBAE3oltkHLV67m++n3A9jRXnJPXq+Ob1nJTi4aiChD/SkdR+QNUri6p+QFKNGtG5kf8CTAARyAXuiYM1XMAAAAASUVORK5CYII=") no-repeat;
+  background-size:42rpx 42rpx;
+background-position:50% 40%;
+}
+.trnav{
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+.searchbox{
+  width: 100%;
+  /* border: 1px solid #ddd; */
+  border-radius: 12rpx;
+  position: relative;
+  text-align: center;
+  padding: 0 100rpx;
+  box-sizing: border-box;
+  /* margin-bottom: 30rpx; */
+  background: #f5f5f5;
+}
+.searchback{
+  font-size: 30rpx;
+  color: #666;
+  width: 120rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  padding: 26rpx 0;
+}
+.searchback::before{
+  display: inline-block;
+  content: '';
+  width: 1px;
+  height: 80%;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  background: #ddd;
+}
+.searchinp{
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.s1{
+  width:100rpx;
+  height:92rpx;
+  position: absolute;
+  right: 0;
+  top:0;
+}
+.hot_left{
+  padding: 0 0 0 20rpx;
+}
+.fixedposition{
+  position: fixed;
+  background: #fff;
+  width: 90%;
+  top: 0;
+  left: 5%;
+}
+.emptyboxtr{
+  display: block;
+  width: 100%;
+  height: 130rpx;
+}

@@ -1,0 +1,41 @@
+<!--pages/collection/collection.wxml-->
+<wxs module="filter" src="../../utils/secondToDate.wxs"></wxs>
+<view>
+  <view class='padlf bgwhite'>
+    <view class='recordNav'>
+      <view class="{{nav == 1 ? 'nav_child nav_selected' : 'nav_child'}}" bindtap='navFun' data-nav='1'>证书收藏</view>
+      <view class="{{nav == 2 ? 'nav_child nav_selected' : 'nav_child'}}" bindtap='navFun' data-nav='2'>资讯收藏</view>
+    </view>
+  </view>
+  <!--学习记录模块  -->
+  <!-- <view class='helper'>
+    <view class='magb padlf bgwhite'>
+      <view wx:if="{{kaozhengList.length > 0}}">
+        <navigator url="{{'../notes/notes?new_search=0&zhuanyeid=' + item.major_id + '&zhiyeid=' + item.prof_id}}" class='record_time record_zs' wx:for="{{kaozhengList}}" wx:key="{{index}}">
+          <view class='listindex'>{{index + 1}}</view>
+          <view class='rzsT1'>{{item.created_at}}建议结果</view>
+          <view class='rzsT2'>我的专业：{{item.major.major_name}}</view>
+          <view class='rzsT2'>就业方向：{{item.profession.prof_name}}</view>
+        </navigator>
+      </view>
+      <view class='nonthingbox' wx:else>暂时没有测试结果喔~</view>
+      <view class='record_time record_zs'>
+        <view class='listindex'>2</view>
+        <view class='rzsT1'>2018年4月25日建议结果</view>
+        <view class='rzsT2'>我的专业：环境管理工程</view>
+        <view class='rzsT2'>就业方向：互联网产品经理</view>
+      </view>
+    </view>
+  </view> -->
+  <view class='cursebox'>
+    <view wx:if="{{favoritesList.length > 0}}">
+      <navigator url="{{ nav == '1' ? ('../certificateDetails/certificateDetails?certsId=' + item.id) : ('../newsDetails/newsDetails?id=' + item.id)}}" class='courseList' wx:for="{{favoritesList}}" wx:key="{{index}}">
+        <view class='listindex'>{{index + 1}}</view>
+        <view class='clT1'>{{item.cert_name || item.title}}</view>
+        <view class='clT2'>{{filter.dateSplit(item.created_at)}}</view>
+        <view class='pointIcon'></view>
+      </navigator>
+    </view>
+    <view class='nonthingbox' wx:else><view wx:if="{{nav == 1}}">暂时没有证书收藏喔~</view><view wx:else>暂时没有资讯收藏喔~</view></view>
+  </view>
+</view>

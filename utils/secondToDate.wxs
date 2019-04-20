@@ -1,0 +1,17 @@
+var filter = {
+  cleanTowxml: function (result) {
+    // var reg = /^["|'](.*)["|']$/g;
+    // var m = result.replace(reg, '$1');
+    var m = eval(result)
+    return m;
+  },
+  dateSplit: function (result) {
+    console.log(123)
+    console.log(result.split(' '))
+    return result.split(' ')[0];
+  }
+}
+module.exports = {
+  cleanTowxml: filter.cleanTowxml,
+  dateSplit: filter.dateSplit
+}

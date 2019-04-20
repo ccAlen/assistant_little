@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "考证动态",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "login": "../common/login/login",
+    "phone": "../common/phone/phone"
+  }
+}

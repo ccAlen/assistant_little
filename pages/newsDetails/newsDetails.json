@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "猩考证",
+  "usingComponents": {
+    "htmltowxml": "../components/html2wxml/html2wxml",
+    "login": "../common/login/login",
+    "phone": "../common/phone/phone"
+  }
+}

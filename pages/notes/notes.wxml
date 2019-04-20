@@ -1,0 +1,97 @@
+<!--pages/notes/notes.wxml--> 
+<image class='notebanner' src='../img/banner.jpg' mode='aspectFill'></image>
+<view class='notebox'>
+  <view class='notecontent' hidden="{{(!searchcertRecord.major.certs) || (searchcertRecord.major.certs.length <= 0)}}">
+    <view class='notestitle'>
+      <view class='tyscirl'>
+        <text>{{searchcertRecord.major.major_name}}</text>专业
+      </view>
+    </view>
+    <view class='notestitle'>拥有职业资格证书情况如下</view>
+    <view class='canbox'>
+      <canvas canvas-id="mypie" style="width:250px;height:250px;"></canvas>
+    </view>
+    <!-- <view class='typebox'>
+      <navigator url='{{"../certificateDetails/certificateDetails?certsId=" + item.cert_id}}' class='typeList' wx:for="{{majorArr}}" wx:key="{{index}}"><text class='colorbox' style='background:{{colors[index]}}'></text>{{item.cert_name}}<text class='details'>详情</text></navigator>
+      <view class='typeList'><text class='colorbox' style='background:{{colors[4]}}'></text>其他</view>
+    </view> -->
+    <view class='tablebox'>
+      <view class='tdbox' wx:for="{{majorArr}}" wx:key="{{index}}">
+        <view class='tlbox tl1'><text class='colorbox' style='background:{{colors[index]}}'></text>{{item.cert_name}}</view>
+        <navigator url='{{"../certificateDetails/certificateDetails?certsId=" + item.cert_id}}' class='tlbox tl2'>
+          <view class='compensation'>{{item.compensation}}</view>
+          <view style='color:{{colors[index]}};display:inline-block;'>查看详情</view>
+        </navigator>
+      </view>
+      <view class='tdbox'>
+        <view class='tlbox tl1'><text class='colorbox' style='background:{{colors[4]}}'></text>其他资格证书</view>
+        <view class='tlbox tl2'>
+          <!-- <view style='color:{{colors[4]}}'>查看详情</view> -->
+        </view>
+      </view>
+    </view>
+    <view class='notestips'>点击证书详情，可查看完整内容</view>
+  </view>
+  <view class='notecontent' hidden="{{(!searchcertRecord.profs.certs) || (searchcertRecord.profs.certs.length <= 0)}}">
+    <view class='notestitle'>
+      <view class='tyscirl'>
+        <text>{{searchcertRecord.profs.prof_name}}</text>岗位
+      </view>
+    </view>
+    <view class='notestitle'>拥有职业资格证书情况如下</view>
+    <view class='canbox'>
+      <canvas canvas-id="mypie1" style="width:250px;height:250px;"></canvas>
+    </view>
+    <!-- <view class='typebox'>
+      <navigator url='{{"../certificateDetails/certificateDetails?certsId=" + item.cert_id}}' class='typeList' wx:for="{{profsArr}}" wx:key="{{index}}"><text class='colorbox' style='background:{{colors[index]}}'></text>{{item.cert_name}}<text class='shu'></text><text class='details'>详情</text></navigator>
+      <view class='typeList'><text class='colorbox' style='background:{{colors[4]}}'></text>其他</view>
+    </view> -->
+    <view class='tablebox'>
+      <view class='tdbox' wx:for="{{profsArr}}" wx:key="{{index}}">
+        <view class='tlbox tl1'><text class='colorbox' style='background:{{colors[index]}}'></text>{{item.cert_name}}</view>
+        <navigator url='{{"../certificateDetails/certificateDetails?certsId=" + item.cert_id}}' class='tlbox tl2'>
+          <view class='compensation'>{{item.compensation}}</view>
+          <view style='color:{{colors[index]}};display:inline-block;'>查看详情</view>
+        </navigator>
+      </view>
+      <view class='tdbox'>
+        <view class='tlbox tl1'><text class='colorbox' style='background:{{colors[4]}}'></text>其他资格证书</view>
+        <view class='tlbox tl2'>
+          <!-- <view style='color:{{colors[4]}}'>查看详情</view> -->
+        </view>
+      </view>
+    </view>
+    <view class='notestips'>点击证书详情，可查看完整内容</view>
+  </view>
+  <view class='nothing' wx:if="{{searchcertRecord.major.certs && searchcertRecord.major.certs.length <= 0 && searchcertRecord.profs.certs && searchcertRecord.profs.certs.length <= 0 || !searchcertRecord.profs.certs}}">因未输入就业方向，暂无职业相关考证建议</view>
+</view>
+
+<cover-view class='bottomNav'>
+  <cover-view class='bottomNav_child' bindtap='linkIndexFun'>
+    <cover-image class='icon' src='../img/index.png'></cover-image>
+    <cover-view class='navtxt'>返回首页</cover-view>
+  </cover-view>
+  <cover-view class='bottomNav_child' bindtap='aiIndex'>
+    <cover-image class='icon c1' src='../img/share.png'></cover-image>
+    <button class='sharebtn navtxt' open-type="share" plain="true">分享好友</button>
+  </cover-view>
+  <cover-view class='bottomNav_child' bindtap='generatingPoster'>
+    <cover-image class='icon c2' src='../img/load.png'></cover-image>
+    <cover-view class='navtxt'>生成海报</cover-view>
+  </cover-view>
+</cover-view>
+<view class='emptybox12'></view>
+<cover-view class='posterContent' wx:if="{{showPoster}}">
+  <cover-view class='grayShadow' bindtap='closePosterFun'></cover-view>
+  <cover-view class='posterMain'>
+    <cover-view class='relativebox'>
+      <cover-image bindtap='closePosterFun' src='../img/close.png' class='closebtnpost'></cover-image>
+      <cover-image src='{{posterimg}}' mode='aspectFill' class='posterimg'></cover-image>
+      <cover-view class='pt1'>保存图片，分享到朋友圈</cover-view>
+      <cover-view class='save' bindtap='saveFun'>
+        <cover-image src='../img/download.png' class='dowloadicon'></cover-image>
+        <cover-view class='st'>保存</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
